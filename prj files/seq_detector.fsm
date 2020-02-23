@@ -1,0 +1,113 @@
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity seq_detector is
+port(	input	:	in	bit;
+	vdd	:	in	bit;
+	vss	:	in	bit;
+	clk	:	in	bit;
+	reset	:	in	bit;
+	output	:	out	bit;
+	termin	:	out	bit );
+
+end seq_detector;
+
+
+architecture fsm of seq_detector is
+
+  type state_type is (s0, s1, s2, s3, s5, t);  
+  signal cs:state_type;
+  signal ns:state_type; 
+
+	
+--synthesis directives :
+--pragma current_state cs
+--pragma next_state ns
+--pragma clock clk
+
+begin
+
+process (input, cs, reset)
+
+  begin
+
+	if (reset = '1') then
+	  --resetting to s0
+	  ns <= s0;
+	else
+
+	case cs is	
+	when s0 =>
+		if (input = '1') then
+			ns <= s1;	
+			output <= '0';
+			termin <= '0';
+        	else
+			ns <= s2;	
+			output <= '0';
+			termin <= '0';
+		end if;
+	when s1 =>
+		if (input = '1') then
+			ns <= s1;	
+			output <= '0';
+			termin <= '0';
+        	else
+			ns <= s3;	
+			output <= '0';
+			termin <= '0';
+		end if;	
+	when s2 =>
+		if (input = '1') then
+			ns <= s5;	
+			output <= '0';
+			termin <= '0';
+        	else
+			ns <= s2;	
+			output <= '0';
+			termin <= '0';
+		end if;
+	when s3 =>
+		if (input = '1') then
+			ns <= s5;	
+			output <= '0';
+			termin <= '0';
+        	else
+			ns <= t;	
+			output <= '0';
+			termin <= '1';
+		end if;	
+	when s5 =>
+		if (input = '1') then
+			ns <= s1;	
+			output <= '0';
+			termin <= '0';
+        	else
+			ns <= s3;	
+			output <= '1';
+			termin <= '0';
+		end if;
+	when t =>
+			ns <= t;	
+			output <= '0';
+			termin <= '1';
+
+
+	end case;	
+	end if;
+end process;
+
+
+process(clk)
+
+begin
+	if(clk='1' and not clk'stable)then
+     		 cs <= ns;
+	end if;
+end process;
+
+
+
+end fsm;

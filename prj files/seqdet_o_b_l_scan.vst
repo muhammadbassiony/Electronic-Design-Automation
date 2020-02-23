@@ -1,0 +1,434 @@
+entity seqdet_o_b_l_scan is
+   port (
+      input   : in      bit;
+      vdd     : in      bit;
+      vss     : in      bit;
+      clk     : in      bit;
+      reset   : in      bit;
+      output  : out     bit;
+      termin  : out     bit;
+      scanin  : in      bit;
+      test    : in      bit;
+      scanout : out     bit
+ );
+end seqdet_o_b_l_scan;
+
+architecture structural of seqdet_o_b_l_scan is
+Component inv_x2
+   port (
+      i   : in      bit;
+      nq  : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+Component noa22_x1
+   port (
+      i0  : in      bit;
+      i1  : in      bit;
+      i2  : in      bit;
+      nq  : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+Component noa2a2a23_x1
+   port (
+      i0  : in      bit;
+      i1  : in      bit;
+      i2  : in      bit;
+      i3  : in      bit;
+      i4  : in      bit;
+      i5  : in      bit;
+      nq  : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+Component an12_x1
+   port (
+      i0  : in      bit;
+      i1  : in      bit;
+      q   : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+Component na2_x1
+   port (
+      i0  : in      bit;
+      i1  : in      bit;
+      nq  : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+Component no2_x1
+   port (
+      i0  : in      bit;
+      i1  : in      bit;
+      nq  : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+Component oa2a22_x2
+   port (
+      i1  : in      bit;
+      i0  : in      bit;
+      i3  : in      bit;
+      i2  : in      bit;
+      q   : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+Component a2_x2
+   port (
+      i0  : in      bit;
+      i1  : in      bit;
+      q   : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+Component one_x0
+   port (
+      q   : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+Component sff2_x4
+   port (
+      ck  : in      bit;
+      cmd : in      bit;
+      i0  : in      bit;
+      i1  : in      bit;
+      q   : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+Component buf_x2
+   port (
+      i   : in      bit;
+      q   : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+signal seq_detector_cs  : bit_vector( 5 downto 0);
+signal one_sig          : bit;
+signal not_reset        : bit;
+signal not_input        : bit;
+signal noa2a2a23_x1_sig : bit;
+signal noa22_x1_sig     : bit;
+signal noa22_x1_4_sig   : bit;
+signal noa22_x1_3_sig   : bit;
+signal noa22_x1_2_sig   : bit;
+signal no2_x1_sig       : bit;
+signal na2_x1_sig       : bit;
+signal na2_x1_8_sig     : bit;
+signal na2_x1_7_sig     : bit;
+signal na2_x1_6_sig     : bit;
+signal na2_x1_5_sig     : bit;
+signal na2_x1_4_sig     : bit;
+signal na2_x1_3_sig     : bit;
+signal na2_x1_2_sig     : bit;
+signal inv_x2_sig       : bit;
+signal an12_x1_sig      : bit;
+signal a2_x2_sig        : bit;
+
+begin
+
+not_input_ins : inv_x2
+   port map (
+      i   => input,
+      nq  => not_input,
+      vdd => vdd,
+      vss => vss
+   );
+
+not_reset_ins : inv_x2
+   port map (
+      i   => reset,
+      nq  => not_reset,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv_x2_ins : inv_x2
+   port map (
+      i   => seq_detector_cs(0),
+      nq  => inv_x2_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+na2_x1_ins : na2_x1
+   port map (
+      i0  => not_input,
+      i1  => seq_detector_cs(2),
+      nq  => na2_x1_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+noa22_x1_ins : noa22_x1
+   port map (
+      i0  => na2_x1_sig,
+      i1  => inv_x2_sig,
+      i2  => reset,
+      nq  => noa22_x1_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+na2_x1_2_ins : na2_x1
+   port map (
+      i0  => input,
+      i1  => seq_detector_cs(2),
+      nq  => na2_x1_2_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+na2_x1_3_ins : na2_x1
+   port map (
+      i0  => input,
+      i1  => seq_detector_cs(3),
+      nq  => na2_x1_3_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+noa22_x1_2_ins : noa22_x1
+   port map (
+      i0  => na2_x1_3_sig,
+      i1  => na2_x1_2_sig,
+      i2  => reset,
+      nq  => noa22_x1_2_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+na2_x1_4_ins : na2_x1
+   port map (
+      i0  => not_input,
+      i1  => seq_detector_cs(4),
+      nq  => na2_x1_4_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+na2_x1_5_ins : na2_x1
+   port map (
+      i0  => not_input,
+      i1  => seq_detector_cs(1),
+      nq  => na2_x1_5_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+noa22_x1_3_ins : noa22_x1
+   port map (
+      i0  => na2_x1_5_sig,
+      i1  => na2_x1_4_sig,
+      i2  => reset,
+      nq  => noa22_x1_3_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+na2_x1_6_ins : na2_x1
+   port map (
+      i0  => not_input,
+      i1  => seq_detector_cs(3),
+      nq  => na2_x1_6_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+na2_x1_7_ins : na2_x1
+   port map (
+      i0  => not_input,
+      i1  => seq_detector_cs(5),
+      nq  => na2_x1_7_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+noa22_x1_4_ins : noa22_x1
+   port map (
+      i0  => na2_x1_7_sig,
+      i1  => na2_x1_6_sig,
+      i2  => reset,
+      nq  => noa22_x1_4_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+noa2a2a23_x1_ins : noa2a2a23_x1
+   port map (
+      i0  => seq_detector_cs(5),
+      i1  => input,
+      i2  => input,
+      i3  => seq_detector_cs(4),
+      i4  => seq_detector_cs(1),
+      i5  => input,
+      nq  => noa2a2a23_x1_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+an12_x1_ins : an12_x1
+   port map (
+      i0  => noa2a2a23_x1_sig,
+      i1  => not_reset,
+      q   => an12_x1_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+na2_x1_8_ins : na2_x1
+   port map (
+      i0  => one_sig,
+      i1  => not_reset,
+      nq  => na2_x1_8_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+no2_x1_ins : no2_x1
+   port map (
+      i0  => input,
+      i1  => reset,
+      nq  => no2_x1_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+termin_ins : oa2a22_x2
+   port map (
+      i1  => no2_x1_sig,
+      i0  => seq_detector_cs(2),
+      i3  => seq_detector_cs(0),
+      i2  => not_reset,
+      q   => termin,
+      vdd => vdd,
+      vss => vss
+   );
+
+a2_x2_ins : a2_x2
+   port map (
+      i0  => not_input,
+      i1  => not_reset,
+      q   => a2_x2_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+output_ins : a2_x2
+   port map (
+      i0  => a2_x2_sig,
+      i1  => seq_detector_cs(1),
+      q   => output,
+      vdd => vdd,
+      vss => vss
+   );
+
+one_sig_ins : one_x0
+   port map (
+      q   => one_sig,
+      vdd => vdd,
+      vss => vss
+   );
+
+seq_detector_cs_0_ins_scan_0 : sff2_x4
+   port map (
+      ck  => clk,
+      cmd => test,
+      i0  => noa22_x1_sig,
+      i1  => scanin,
+      q   => seq_detector_cs(0),
+      vdd => vdd,
+      vss => vss
+   );
+
+seq_detector_cs_1_ins_scan_1 : sff2_x4
+   port map (
+      ck  => clk,
+      cmd => test,
+      i0  => noa22_x1_2_sig,
+      i1  => seq_detector_cs(0),
+      q   => seq_detector_cs(1),
+      vdd => vdd,
+      vss => vss
+   );
+
+seq_detector_cs_2_ins_scan_2 : sff2_x4
+   port map (
+      ck  => clk,
+      cmd => test,
+      i0  => noa22_x1_3_sig,
+      i1  => seq_detector_cs(1),
+      q   => seq_detector_cs(2),
+      vdd => vdd,
+      vss => vss
+   );
+
+seq_detector_cs_3_ins_scan_3 : sff2_x4
+   port map (
+      ck  => clk,
+      cmd => test,
+      i0  => noa22_x1_4_sig,
+      i1  => seq_detector_cs(2),
+      q   => seq_detector_cs(3),
+      vdd => vdd,
+      vss => vss
+   );
+
+seq_detector_cs_4_ins_scan_4 : sff2_x4
+   port map (
+      ck  => clk,
+      cmd => test,
+      i0  => an12_x1_sig,
+      i1  => seq_detector_cs(3),
+      q   => seq_detector_cs(4),
+      vdd => vdd,
+      vss => vss
+   );
+
+seq_detector_cs_5_ins_scan_5 : sff2_x4
+   port map (
+      ck  => clk,
+      cmd => test,
+      i0  => na2_x1_8_sig,
+      i1  => seq_detector_cs(4),
+      q   => seq_detector_cs(5),
+      vdd => vdd,
+      vss => vss
+   );
+
+buf_scan_6 : buf_x2
+   port map (
+      i   => seq_detector_cs(5),
+      q   => scanout,
+      vdd => vdd,
+      vss => vss
+   );
+
+
+end structural;

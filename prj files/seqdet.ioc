@@ -1,0 +1,13 @@
+
+LEFT ( # IOs from bottom to top
+ (IOPIN input.0);
+ (IOPIN clk.0);		)
+TOP ( # IOs from left to right
+ (IOPIN reset.0);
+ (IOPIN output.0);	)
+RIGHT( # IOs from bottom to top
+ (IOPIN termin.0);
+ (IOPIN scanin.0);	)
+BOTTOM( # IOs from left to right
+ (IOPIN test.0);
+ (IOPIN scanout.0);	)

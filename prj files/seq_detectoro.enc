@@ -1,0 +1,8 @@
+# Encoding figure "seq_detector"
+-seq_detector o 6
+t	0	1
+s5	1	2
+s3	2	4
+s2	3	8
+s1	4	10
+s0	5	20

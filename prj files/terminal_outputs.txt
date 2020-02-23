@@ -1,0 +1,554 @@
+		--> Save FSM codes
+		--> Translate FSM to BEH
+		--> Simplify BEH figure
+
+		--> Literals : 65
+
+		--> Save BEH file seq_detectorm
+
+    Encoding Synthesis  -> sdeto.vbe
+syf -CEV -o seq_detector
+
+                          @@@@ @  @@@@   @@@@ @@@@@@@@@ 
+                         @    @@   @@     @     @@    @ 
+                        @@     @    @@   @      @@     @
+                        @@@          @@ @       @@      
+                         @@@@         @@        @@   @  
+                           @@@@       @@        @@@@@@  
+                             @@@      @@        @@   @  
+                        @      @@     @@        @@      
+                        @@     @@     @@        @@      
+                        @@@    @      @@        @@      
+                        @  @@@@     @@@@@@    @@@@@@    
+
+                                 FSM Synthesizer
+
+                  Alliance CAD System 5.0 20090901,     syf 5.0
+                  Copyright (c) 1995-2019,       ASIM/LIP6/UPMC
+                  Author(s): Ludovic Jacomme and Chaker Sarwary
+                  E-mail        :   alliance-users@asim.lip6.fr
+
+		--> Compile FSM file seq_detector
+		--> Check FSM figure outputs
+		--> Simplify FSM figure
+		--> Verify FSM figure
+		--> Identify reset conditions
+
+		--> Name    : seq_detector
+		--> States  : 6
+		--> Inputs  : 4
+		--> Outputs : 2
+		--> Edges   : 12
+		--> Stacks  : 0
+
+		--> Encode FSM figure
+		--> One hot encoding
+		--> Save FSM codes
+		--> Translate FSM to BEH
+		--> Simplify BEH figure
+
+		--> Literals : 66
+
+		--> Save BEH file seq_detectoro
+
+    Encoding Synthesis  -> sdetr.vbe
+syf -CEV -r seq_detector
+
+                          @@@@ @  @@@@   @@@@ @@@@@@@@@ 
+                         @    @@   @@     @     @@    @ 
+                        @@     @    @@   @      @@     @
+                        @@@          @@ @       @@      
+                         @@@@         @@        @@   @  
+                           @@@@       @@        @@@@@@  
+                             @@@      @@        @@   @  
+                        @      @@     @@        @@      
+                        @@     @@     @@        @@      
+                        @@@    @      @@        @@      
+                        @  @@@@     @@@@@@    @@@@@@    
+
+                                 FSM Synthesizer
+
+                  Alliance CAD System 5.0 20090901,     syf 5.0
+                  Copyright (c) 1995-2019,       ASIM/LIP6/UPMC
+                  Author(s): Ludovic Jacomme and Chaker Sarwary
+                  E-mail        :   alliance-users@asim.lip6.fr
+
+		--> Compile FSM file seq_detector
+		--> Check FSM figure outputs
+		--> Simplify FSM figure
+		--> Verify FSM figure
+		--> Identify reset conditions
+
+		--> Name    : seq_detector
+		--> States  : 6
+		--> Inputs  : 4
+		--> Outputs : 2
+		--> Edges   : 12
+		--> Stacks  : 0
+
+		--> Encode FSM figure
+		--> Random encoding
+		--> Save FSM codes
+		--> Translate FSM to BEH
+		--> Simplify BEH figure
+
+		--> Literals : 63
+
+		--> Save BEH file seq_detectorr
+
+<-- Generated
+[alliance@localhost ~]$ make boom_all
+boom -V -d 50 seq_detectora seqdet_a_b > seqdet_a_boom.out
+boom -V -d 50 seq_detectorj seqdet_j_b > seqdet_j_boom.out
+boom -V -d 50 seq_detectorm seqdet_m_b > seqdet_m_boom.out
+boom -V -d 50 seq_detectoro seqdet_o_b > seqdet_o_boom.out
+boom -V -d 50 seq_detectorr seqdet_r_b > seqdet_r_boom.out
+[alliance@localhost ~]$ make boog_all
+boog -x 1 -l paramfile seq_detectora > seqdet_a_boog.out
+Mapping Warning: Cell 'halfadder_x2' isn't supported
+Mapping Warning: Cell 'halfadder_x4' isn't supported
+Mapping Warning: Cell 'o3_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x2' isn't supported
+Mapping Warning: Cell 'no2_x4' isn't supported
+Mapping Warning: Cell 'nao22_x4' isn't supported
+Mapping Warning: Cell 'no4_x4' isn't supported
+Mapping Warning: Cell 'noa3ao322_x4' isn't supported
+Mapping Warning: Cell 'oa3ao322_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x4' isn't supported
+Mapping Warning: Cell 'inv_x4' isn't supported
+Mapping Warning: Cell 'noa2a22_x4' isn't supported
+boog -x 1 -l paramfile seq_detectorj > seqdet_j_boog.out
+Mapping Warning: Cell 'halfadder_x2' isn't supported
+Mapping Warning: Cell 'halfadder_x4' isn't supported
+Mapping Warning: Cell 'o3_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x2' isn't supported
+Mapping Warning: Cell 'no2_x4' isn't supported
+Mapping Warning: Cell 'nao22_x4' isn't supported
+Mapping Warning: Cell 'no4_x4' isn't supported
+Mapping Warning: Cell 'noa3ao322_x4' isn't supported
+Mapping Warning: Cell 'oa3ao322_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x4' isn't supported
+Mapping Warning: Cell 'inv_x4' isn't supported
+Mapping Warning: Cell 'noa2a22_x4' isn't supported
+boog -x 1 -l paramfile seq_detectorm > seqdet_m_boog.out
+Mapping Warning: Cell 'halfadder_x2' isn't supported
+Mapping Warning: Cell 'halfadder_x4' isn't supported
+Mapping Warning: Cell 'o3_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x2' isn't supported
+Mapping Warning: Cell 'no2_x4' isn't supported
+Mapping Warning: Cell 'nao22_x4' isn't supported
+Mapping Warning: Cell 'no4_x4' isn't supported
+Mapping Warning: Cell 'noa3ao322_x4' isn't supported
+Mapping Warning: Cell 'oa3ao322_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x4' isn't supported
+Mapping Warning: Cell 'inv_x4' isn't supported
+Mapping Warning: Cell 'noa2a22_x4' isn't supported
+boog -x 1 -l paramfile seq_detectoro > seqdet_o_boog.out
+Mapping Warning: Cell 'halfadder_x2' isn't supported
+Mapping Warning: Cell 'halfadder_x4' isn't supported
+Mapping Warning: Cell 'o3_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x2' isn't supported
+Mapping Warning: Cell 'no2_x4' isn't supported
+Mapping Warning: Cell 'nao22_x4' isn't supported
+Mapping Warning: Cell 'no4_x4' isn't supported
+Mapping Warning: Cell 'noa3ao322_x4' isn't supported
+Mapping Warning: Cell 'oa3ao322_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x4' isn't supported
+Mapping Warning: Cell 'inv_x4' isn't supported
+Mapping Warning: Cell 'noa2a22_x4' isn't supported
+boog -x 1 -l paramfile seq_detectorr > seqdet_r_boog.out
+Mapping Warning: Cell 'halfadder_x2' isn't supported
+Mapping Warning: Cell 'halfadder_x4' isn't supported
+Mapping Warning: Cell 'o3_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x2' isn't supported
+Mapping Warning: Cell 'no2_x4' isn't supported
+Mapping Warning: Cell 'nao22_x4' isn't supported
+Mapping Warning: Cell 'no4_x4' isn't supported
+Mapping Warning: Cell 'noa3ao322_x4' isn't supported
+Mapping Warning: Cell 'oa3ao322_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x4' isn't supported
+Mapping Warning: Cell 'inv_x4' isn't supported
+Mapping Warning: Cell 'noa2a22_x4' isn't supported
+[alliance@localhost ~]$ make loon_all
+loon -x 1 seq_detectora seqdet_a_b_l paramfile > seqdet_a_bl_loon.out
+\loon -x 1 seq_detectorj seqdet_j_b_l paramfile > seqdet_j_bl_loon.out
+loon -x 1 seq_detectorm seqdet_m_b_l paramfile > seqdet_m_bl_loon.out
+loon -x 1 seq_detectoro seqdet_o_b_l paramfile > seqdet_o_bl_loon.out
+loon -x 1 seq_detectorr seqdet_r_b_l paramfile > seqdet_r_bl_loon.out
+[alliance@localhost ~]$ flatbeh seqdet_o_b_l seqdet_o_b_l_net > seqdet_o_b_l_ney_flatbeh.out 
+[alliance@localhost ~]$ proof -d seq_detectoro seqdet_o_b_l_net > seqdet_o_proof.out
+[alliance@localhost ~]$ make seqdet_o_b_l_net.vbe
+make: `seqdet_o_b_l_net.vbe' is up to date.
+[alliance@localhost ~]$ make all
+    Encoding Synthesis -> prj2_a.vbe
+syf -CEV -a seq_detector
+
+                          @@@@ @  @@@@   @@@@ @@@@@@@@@ 
+                         @    @@   @@     @     @@    @ 
+                        @@     @    @@   @      @@     @
+                        @@@          @@ @       @@      
+                         @@@@         @@        @@   @  
+                           @@@@       @@        @@@@@@  
+                             @@@      @@        @@   @  
+                        @      @@     @@        @@      
+                        @@     @@     @@        @@      
+                        @@@    @      @@        @@      
+                        @  @@@@     @@@@@@    @@@@@@    
+
+                                 FSM Synthesizer
+
+                  Alliance CAD System 5.0 20090901,     syf 5.0
+                  Copyright (c) 1995-2019,       ASIM/LIP6/UPMC
+                  Author(s): Ludovic Jacomme and Chaker Sarwary
+                  E-mail        :   alliance-users@asim.lip6.fr
+
+		--> Compile FSM file seq_detector
+		--> Check FSM figure outputs
+		--> Simplify FSM figure
+		--> Verify FSM figure
+		--> Identify reset conditions
+
+		--> Name    : seq_detector
+		--> States  : 6
+		--> Inputs  : 4
+		--> Outputs : 2
+		--> Edges   : 12
+		--> Stacks  : 0
+
+		--> Encode FSM figure
+		--> Asp encoding
+		--> Save FSM codes
+		--> Translate FSM to BEH
+		--> Simplify BEH figure
+
+		--> Literals : 63
+
+		--> Save BEH file seq_detectora
+
+    Encoding Synthesis  -> sdetj.vbe
+syf -CEV -j seq_detector
+
+                          @@@@ @  @@@@   @@@@ @@@@@@@@@ 
+                         @    @@   @@     @     @@    @ 
+                        @@     @    @@   @      @@     @
+                        @@@          @@ @       @@      
+                         @@@@         @@        @@   @  
+                           @@@@       @@        @@@@@@  
+                             @@@      @@        @@   @  
+                        @      @@     @@        @@      
+                        @@     @@     @@        @@      
+                        @@@    @      @@        @@      
+                        @  @@@@     @@@@@@    @@@@@@    
+
+                                 FSM Synthesizer
+
+                  Alliance CAD System 5.0 20090901,     syf 5.0
+                  Copyright (c) 1995-2019,       ASIM/LIP6/UPMC
+                  Author(s): Ludovic Jacomme and Chaker Sarwary
+                  E-mail        :   alliance-users@asim.lip6.fr
+
+		--> Compile FSM file seq_detector
+		--> Check FSM figure outputs
+		--> Simplify FSM figure
+		--> Verify FSM figure
+		--> Identify reset conditions
+
+		--> Name    : seq_detector
+		--> States  : 6
+		--> Inputs  : 4
+		--> Outputs : 2
+		--> Edges   : 12
+		--> Stacks  : 0
+
+		--> Encode FSM figure
+		--> Jedi encoding
+		--> Save FSM codes
+		--> Translate FSM to BEH
+		--> Simplify BEH figure
+
+		--> Literals : 65
+
+		--> Save BEH file seq_detectorj
+
+    Encoding Synthesis  -> sdetm.vbe
+syf -CEV -m seq_detector
+
+                          @@@@ @  @@@@   @@@@ @@@@@@@@@ 
+                         @    @@   @@     @     @@    @ 
+                        @@     @    @@   @      @@     @
+                        @@@          @@ @       @@      
+                         @@@@         @@        @@   @  
+                           @@@@       @@        @@@@@@  
+                             @@@      @@        @@   @  
+                        @      @@     @@        @@      
+                        @@     @@     @@        @@      
+                        @@@    @      @@        @@      
+                        @  @@@@     @@@@@@    @@@@@@    
+
+                                 FSM Synthesizer
+
+                  Alliance CAD System 5.0 20090901,     syf 5.0
+                  Copyright (c) 1995-2019,       ASIM/LIP6/UPMC
+                  Author(s): Ludovic Jacomme and Chaker Sarwary
+                  E-mail        :   alliance-users@asim.lip6.fr
+
+		--> Compile FSM file seq_detector
+		--> Check FSM figure outputs
+		--> Simplify FSM figure
+		--> Verify FSM figure
+		--> Identify reset conditions
+
+		--> Name    : seq_detector
+		--> States  : 6
+		--> Inputs  : 4
+		--> Outputs : 2
+		--> Edges   : 12
+		--> Stacks  : 0
+
+		--> Encode FSM figure
+		--> Mustang encoding
+		--> Save FSM codes
+		--> Translate FSM to BEH
+		--> Simplify BEH figure
+
+		--> Literals : 65
+
+		--> Save BEH file seq_detectorm
+
+    Encoding Synthesis  -> sdeto.vbe
+syf -CEV -o seq_detector
+
+                          @@@@ @  @@@@   @@@@ @@@@@@@@@ 
+                         @    @@   @@     @     @@    @ 
+                        @@     @    @@   @      @@     @
+                        @@@          @@ @       @@      
+                         @@@@         @@        @@   @  
+                           @@@@       @@        @@@@@@  
+                             @@@      @@        @@   @  
+                        @      @@     @@        @@      
+                        @@     @@     @@        @@      
+                        @@@    @      @@        @@      
+                        @  @@@@     @@@@@@    @@@@@@    
+
+                                 FSM Synthesizer
+
+                  Alliance CAD System 5.0 20090901,     syf 5.0
+                  Copyright (c) 1995-2019,       ASIM/LIP6/UPMC
+                  Author(s): Ludovic Jacomme and Chaker Sarwary
+                  E-mail        :   alliance-users@asim.lip6.fr
+
+		--> Compile FSM file seq_detector
+		--> Check FSM figure outputs
+		--> Simplify FSM figure
+		--> Verify FSM figure
+		--> Identify reset conditions
+
+		--> Name    : seq_detector
+		--> States  : 6
+		--> Inputs  : 4
+		--> Outputs : 2
+		--> Edges   : 12
+		--> Stacks  : 0
+
+		--> Encode FSM figure
+		--> One hot encoding
+		--> Save FSM codes
+		--> Translate FSM to BEH
+		--> Simplify BEH figure
+
+		--> Literals : 66
+
+		--> Save BEH file seq_detectoro
+
+    Encoding Synthesis  -> sdetr.vbe
+syf -CEV -r seq_detector
+
+                          @@@@ @  @@@@   @@@@ @@@@@@@@@ 
+                         @    @@   @@     @     @@    @ 
+                        @@     @    @@   @      @@     @
+                        @@@          @@ @       @@      
+                         @@@@         @@        @@   @  
+                           @@@@       @@        @@@@@@  
+                             @@@      @@        @@   @  
+                        @      @@     @@        @@      
+                        @@     @@     @@        @@      
+                        @@@    @      @@        @@      
+                        @  @@@@     @@@@@@    @@@@@@    
+
+                                 FSM Synthesizer
+
+                  Alliance CAD System 5.0 20090901,     syf 5.0
+                  Copyright (c) 1995-2019,       ASIM/LIP6/UPMC
+                  Author(s): Ludovic Jacomme and Chaker Sarwary
+                  E-mail        :   alliance-users@asim.lip6.fr
+
+		--> Compile FSM file seq_detector
+		--> Check FSM figure outputs
+		--> Simplify FSM figure
+		--> Verify FSM figure
+		--> Identify reset conditions
+
+		--> Name    : seq_detector
+		--> States  : 6
+		--> Inputs  : 4
+		--> Outputs : 2
+		--> Edges   : 12
+		--> Stacks  : 0
+
+		--> Encode FSM figure
+		--> Random encoding
+		--> Save FSM codes
+		--> Translate FSM to BEH
+		--> Simplify BEH figure
+
+		--> Literals : 65
+
+		--> Save BEH file seq_detectorr
+
+<-- Generated
+[alliance@localhost ~]$ make boom_all
+boom -V -d 50 seq_detectora seqdet_a_b > seqdet_a_boom.out
+boom -V -d 50 seq_detectorj seqdet_j_b > seqdet_j_boom.out
+boom -V -d 50 seq_detectorm seqdet_m_b > seqdet_m_boom.out
+boom -V -d 50 seq_detectoro seqdet_o_b > seqdet_o_boom.out
+boom -V -d 50 seq_detectorr seqdet_r_b > seqdet_r_boom.out
+[alliance@localhost ~]$ make boog_all
+boog -x 1 -l paramfile seq_detectora > seqdet_a_boog.out
+Mapping Warning: Cell 'halfadder_x2' isn't supported
+Mapping Warning: Cell 'halfadder_x4' isn't supported
+Mapping Warning: Cell 'o3_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x2' isn't supported
+Mapping Warning: Cell 'no2_x4' isn't supported
+Mapping Warning: Cell 'nao22_x4' isn't supported
+Mapping Warning: Cell 'no4_x4' isn't supported
+Mapping Warning: Cell 'noa3ao322_x4' isn't supported
+Mapping Warning: Cell 'oa3ao322_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x4' isn't supported
+Mapping Warning: Cell 'inv_x4' isn't supported
+Mapping Warning: Cell 'noa2a22_x4' isn't supported
+boog -x 1 -l paramfile seq_detectorj > seqdet_j_boog.out
+Mapping Warning: Cell 'halfadder_x2' isn't supported
+Mapping Warning: Cell 'halfadder_x4' isn't supported
+Mapping Warning: Cell 'o3_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x2' isn't supported
+Mapping Warning: Cell 'no2_x4' isn't supported
+Mapping Warning: Cell 'nao22_x4' isn't supported
+Mapping Warning: Cell 'no4_x4' isn't supported
+Mapping Warning: Cell 'noa3ao322_x4' isn't supported
+Mapping Warning: Cell 'oa3ao322_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x4' isn't supported
+Mapping Warning: Cell 'inv_x4' isn't supported
+Mapping Warning: Cell 'noa2a22_x4' isn't supported
+boog -x 1 -l paramfile seq_detectorm > seqdet_m_boog.out
+Mapping Warning: Cell 'halfadder_x2' isn't supported
+Mapping Warning: Cell 'halfadder_x4' isn't supported
+Mapping Warning: Cell 'o3_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x2' isn't supported
+Mapping Warning: Cell 'no2_x4' isn't supported
+Mapping Warning: Cell 'nao22_x4' isn't supported
+Mapping Warning: Cell 'no4_x4' isn't supported
+Mapping Warning: Cell 'noa3ao322_x4' isn't supported
+Mapping Warning: Cell 'oa3ao322_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x4' isn't supported
+Mapping Warning: Cell 'inv_x4' isn't supported
+Mapping Warning: Cell 'noa2a22_x4' isn't supported
+boog -x 1 -l paramfile seq_detectoro > seqdet_o_boog.out
+Mapping Warning: Cell 'halfadder_x2' isn't supported
+Mapping Warning: Cell 'halfadder_x4' isn't supported
+Mapping Warning: Cell 'o3_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x2' isn't supported
+Mapping Warning: Cell 'no2_x4' isn't supported
+Mapping Warning: Cell 'nao22_x4' isn't supported
+Mapping Warning: Cell 'no4_x4' isn't supported
+Mapping Warning: Cell 'noa3ao322_x4' isn't supported
+Mapping Warning: Cell 'oa3ao322_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x4' isn't supported
+Mapping Warning: Cell 'inv_x4' isn't supported
+Mapping Warning: Cell 'noa2a22_x4' isn't supported
+boog -x 1 -l paramfile seq_detectorr > seqdet_r_boog.out
+Mapping Warning: Cell 'halfadder_x2' isn't supported
+Mapping Warning: Cell 'halfadder_x4' isn't supported
+Mapping Warning: Cell 'o3_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x2' isn't supported
+Mapping Warning: Cell 'no2_x4' isn't supported
+Mapping Warning: Cell 'nao22_x4' isn't supported
+Mapping Warning: Cell 'no4_x4' isn't supported
+Mapping Warning: Cell 'noa3ao322_x4' isn't supported
+Mapping Warning: Cell 'oa3ao322_x4' isn't supported
+Mapping Warning: Cell 'fulladder_x4' isn't supported
+Mapping Warning: Cell 'inv_x4' isn't supported
+Mapping Warning: Cell 'noa2a22_x4' isn't supported
+[alliance@localhost ~]$ make loon_all
+loon -x 1 seq_detectora seqdet_a_b_l paramfile > seqdet_a_bl_loon.out
+loon -x 1 seq_detectorj seqdet_j_b_l paramfile > seqdet_j_bl_loon.out
+loon -x 1 seq_detectorm seqdet_m_b_l paramfile > seqdet_m_bl_loon.out
+loon -x 1 seq_detectoro seqdet_o_b_l paramfile > seqdet_o_bl_loon.out
+loon -x 1 seq_detectorr seqdet_r_b_l paramfile > seqdet_r_bl_loon.out
+[alliance@localhost ~]$ make loon2_all
+loon -x 0 seq_detectora seqdet_a_b_l2 paramfile > seqdet_a_bl2_loon.out
+loon -x 0 seq_detectorj seqdet_j_b_l2 paramfile > seqdet_j_bl2_loon.out
+loon -x 0 seq_detectorm seqdet_m_b_l2 paramfile > seqdet_m_bl2_loon.out
+loon -x 0 seq_detectoro seqdet_o_b_l2 paramfile > seqdet_o_bl2_loon.out
+loon -x 0 seq_detectorr seqdet_r_b_l2 paramfile > seqdet_r_bl2_loon.out
+[alliance@localhost ~]$ make seqdet_o_b_l_net.vst
+make: *** No rule to make target `seqdet_o_b_l_net.vst'.  Stop.
+[alliance@localhost ~]$ make seqdet_o_b_l_net.vbe
+flatbeh seqdet_o_b_l seqdet_o_b_l_net > seqdet_o_b_l_net_flatbeh.out 
+proof -d seq_detectoro seqdet_o_b_l_net > seqdet_o_proof.out
+[alliance@localhost ~]$ cat seqdet_o_b_l.vst | grep sff
+cat: seqdet_o_b_l.vst: No such file or directory
+[alliance@localhost ~]$ cat seqdet_o_b_l.vst | grep sff
+Component sff1_x4
+seq_detector_cs_0_ins : sff1_x4
+seq_detector_cs_1_ins : sff1_x4
+seq_detector_cs_2_ins : sff1_x4
+seq_detector_cs_3_ins : sff1_x4
+seq_detector_cs_4_ins : sff1_x4
+seq_detector_cs_5_ins : sff1_x4
+[alliance@localhost ~]$ scapin -VRB seqdet_o_b_l scan seqdet_o_b_l_scan > scapin.out
+[alliance@localhost ~]$ 
+[alliance@localhost ~]$ MBK_OUT_LO=al; export MBK_OUT_LO; RDS_TECHNO_NAME=./techno-035.rds; export RDS_TECHNO_NAME;\
+> cougar -v seqdet_o_b_l_scan > cougar_seqdet_o_b_l_scan.out
+[alliance@localhost ~]$ lvx vst al seqdet_o_b_l_scan seqdet_o_b_l_scan -f
+
+                       @@@@@@      @@@@    @@@ @@@@   @@@@
+                         @@         @@      @   @@     @  
+                         @@         @@      @    @@   @   
+                         @@          @@    @      @@ @    
+                         @@          @@    @       @@     
+                         @@           @@  @        @@     
+                         @@           @@  @        @@@    
+                         @@            @@@        @  @@   
+                         @@      @     @@@       @    @@  
+                         @@     @       @       @      @@ 
+                       @@@@@@@@@@       @      @@@    @@@@
+
+                             Gate Netlist Comparator
+
+                   Alliance CAD System 5.0 20090901,   lvx 1.4
+                   Copyright (c) 1992-2019,     ASIM/LIP6/UPMC
+                   E-mail        : alliance-users@asim.lip6.fr
+
+
+
+***** Loading and flattening seqdet_o_b_l_scan (vst)...
+
+***** Loading and flattening seqdet_o_b_l_scan (al)...
+
+
+***** Compare Terminals ............
+***** O.K.	(0 sec)
+
+***** Compare Instances ..........
+***** O.K.	(0 sec)
+
+***** Compare Connections ............
+***** O.K.	(0 sec)
+
+===== Terminals .......... 10    
+===== Instances .......... 29    
+===== Connectors ......... 171   
+
+
+***** Netlists are Identical. *****	(0 sec)
+

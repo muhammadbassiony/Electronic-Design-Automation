@@ -1,0 +1,82 @@
+-- VHDL data flow description generated from `seq_detectorj`
+--		date : Fri Dec 13 11:46:35 2019
+
+
+-- Entity Declaration
+
+ENTITY seq_detectorj IS
+  PORT (
+  input : in BIT;	-- input
+  vdd : in BIT;	-- vdd
+  vss : in BIT;	-- vss
+  clk : in BIT;	-- clk
+  reset : in BIT;	-- reset
+  output : out BIT;	-- output
+  termin : out BIT	-- termin
+  );
+END seq_detectorj;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE VBE OF seq_detectorj IS
+  SIGNAL seq_detector_cs : REG_VECTOR(2 DOWNTO 0) REGISTER;	-- seq_detector_cs
+  SIGNAL seq_detector_cs_t : BIT;		-- seq_detector_cs_t
+  SIGNAL seq_detector_ns_t : BIT;		-- seq_detector_ns_t
+  SIGNAL seq_detector_cs_s5 : BIT;		-- seq_detector_cs_s5
+  SIGNAL seq_detector_ns_s5 : BIT;		-- seq_detector_ns_s5
+  SIGNAL seq_detector_cs_s3 : BIT;		-- seq_detector_cs_s3
+  SIGNAL seq_detector_ns_s3 : BIT;		-- seq_detector_ns_s3
+  SIGNAL seq_detector_cs_s2 : BIT;		-- seq_detector_cs_s2
+  SIGNAL seq_detector_ns_s2 : BIT;		-- seq_detector_ns_s2
+  SIGNAL seq_detector_cs_s1 : BIT;		-- seq_detector_cs_s1
+  SIGNAL seq_detector_ns_s1 : BIT;		-- seq_detector_ns_s1
+  SIGNAL seq_detector_cs_s0 : BIT;		-- seq_detector_cs_s0
+  SIGNAL seq_detector_ns_s0 : BIT;		-- seq_detector_ns_s0
+  SIGNAL seq_detector_ns : BIT_VECTOR(2 DOWNTO 0);	-- seq_detector_ns
+
+BEGIN
+  seq_detector_ns(0) <= (seq_detector_ns_s0 OR seq_detector_ns_s3 OR 
+seq_detector_ns_t);
+  seq_detector_ns(1) <= (seq_detector_ns_s0 OR seq_detector_ns_s2 OR 
+seq_detector_ns_s5 OR seq_detector_ns_t);
+  seq_detector_ns(2) <= (seq_detector_ns_s5 OR seq_detector_ns_t);
+  seq_detector_ns_s0 <= '0';
+  seq_detector_cs_s0 <= (NOT(seq_detector_cs(2)) AND seq_detector_cs(1) 
+AND seq_detector_cs(0));
+  seq_detector_ns_s1 <= ((seq_detector_cs_s0 AND input) OR (
+seq_detector_cs_s1 AND input) OR (seq_detector_cs_s5 AND input));
+  seq_detector_cs_s1 <= (NOT(seq_detector_cs(1)) AND NOT(
+seq_detector_cs(0)));
+  seq_detector_ns_s2 <= ((seq_detector_cs_s0 AND NOT(input)) OR (
+seq_detector_cs_s2 AND NOT(input)));
+  seq_detector_cs_s2 <= (NOT(seq_detector_cs(2)) AND seq_detector_cs(1) 
+AND NOT(seq_detector_cs(0)));
+  seq_detector_ns_s3 <= ((seq_detector_cs_s1 AND NOT(input)) OR (
+seq_detector_cs_s5 AND NOT(input)));
+  seq_detector_cs_s3 <= (NOT(seq_detector_cs(1)) AND seq_detector_cs(0));
+  seq_detector_ns_s5 <= ((seq_detector_cs_s2 AND input) OR (
+seq_detector_cs_s3 AND input));
+  seq_detector_cs_s5 <= (seq_detector_cs(2) AND NOT(seq_detector_cs(0)));
+  seq_detector_ns_t <= ((seq_detector_cs_s3 AND NOT(input)) OR 
+seq_detector_cs_t);
+  seq_detector_cs_t <= (seq_detector_cs(2) AND seq_detector_cs(0));
+  label0 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    seq_detector_cs(0) <= GUARDED (seq_detector_ns(0) OR reset);
+  END BLOCK label0;
+  label1 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    seq_detector_cs(1) <= GUARDED (seq_detector_ns(1) OR reset);
+  END BLOCK label1;
+  label2 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    seq_detector_cs(2) <= GUARDED (seq_detector_ns(2) AND NOT(reset));
+  END BLOCK label2;
+
+termin <= ((seq_detector_cs_s3 AND NOT(reset) AND NOT(input
+)) OR (seq_detector_cs_t AND NOT(reset)));
+
+output <= (seq_detector_cs_s5 AND NOT(reset) AND NOT(input)
+);
+END;

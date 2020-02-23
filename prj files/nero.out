@@ -1,0 +1,109 @@
+
+                   @@@    @@@           @@@@@@@              
+                    @@     @              @@   @@            
+                    @@@    @              @@    @@           
+                    @ @@   @    @@@@@     @@    @@     @@@   
+                    @ @@   @   @     @    @@   @@    @@   @@ 
+                    @  @@  @  @@     @@   @@@@@     @@     @@
+                    @   @@ @  @@@@@@@@@   @@  @@    @@     @@
+                    @   @@ @  @@          @@   @@   @@     @@
+                    @    @@@  @@      @   @@   @@   @@     @@
+                    @     @@   @@    @@   @@    @@   @@   @@ 
+                   @@@    @@     @@@@   @@@@@   @@@    @@@   
+
+                               Negotiating Router
+
+                   Alliance CAD System 5.0 20090901,  nero 5.0
+                   Copyright (c) 2002-2019,     ASIM/LIP6/UPMC
+                   E-mail        : alliance-users@asim.lip6.fr
+
+                                S/N 20080611.1
+
+
+  o  MBK environment :
+
+     MBK_IN_LO       := vst
+     MBK_OUT_LO      := vst
+     MBK_IN_PH       := ap
+     MBK_OUT_PH      := ap
+     MBK_WORK_LIB    := .
+     MBK_CATA_LIB    := .
+                        /usr/lib64/alliance/cells/sxlib
+                        /usr/lib64/alliance/cells/dp_sxlib
+                        /usr/lib64/alliance/cells/rflib
+                        /usr/lib64/alliance/cells/rf2lib
+                        /usr/lib64/alliance/cells/ramlib
+                        /usr/lib64/alliance/cells/romlib
+                        /usr/lib64/alliance/cells/pxlib
+                        /usr/lib64/alliance/cells/padlib
+     MBK_CATAL_NAME  := CATAL
+     MBK_VDD         := vdd
+     MBK_VSS         := vss
+     MBK_SEPAR       := .
+
+  o  Loading netlist "seqdet_o_b_l_scan"...
+  o  Loading layout "seqdet_p"...
+  o  Flattening layout...
+  o  Flattening netlist...
+  o  Building netlist dual representation (lofigchain)...
+  o  Binding logical & physical views...
+
+  o  Loading design into grid...
+     o  Using seed cell "a2_x2_ins" (model "a2_x2").
+     o  Grid offset : (0,0) [adjust (0,0)]
+     o  Small design, global routing disabled.
+     o  Allocating grid size [52,61,3].
+     o  Loading external terminals.
+     o  Finding obstacles.
+     o  Loading nets into grid.
+     o  Allocating the net scheduler.
+     o  Reading power grid.
+
+  o  Local routing stage.
+     - [  35] (hp :=     0) "vdd"
+     - [  34] (hp :=     0) "vss"
+     - [  33] (hp :=    10) "a2_x2_sig"
+     - [  32] (hp :=    11) "na2_x1_sig"
+     - [  31] (hp :=    12) "na2_x1_8_sig"
+     - [  30] (hp :=    12) "one_sig"
+     - [  29] (hp :=    12) "na2_x1_6_sig"
+     - [  28] (hp :=    13) "no2_x1_sig"
+     - [  27] (hp :=    14) "na2_x1_2_sig"
+     - [  26] (hp :=    14) "an12_x1_sig"
+     - [  25] (hp :=    14) "inv_x2_sig"
+     - [  24] (hp :=    14) "na2_x1_4_sig"
+     - [  23] (hp :=    15) "na2_x1_3_sig"
+     - [  22] (hp :=    15) "na2_x1_5_sig"
+     - [  21] (hp :=    17) "na2_x1_7_sig"
+     - [  20] (hp :=    18) "scanout"
+     - [  19] (hp :=    18) "noa22_x1_sig"
+     - [  18] (hp :=    18) "noa22_x1_4_sig"
+     - [  17] (hp :=    21) "output"
+     - [  16] (hp :=    25) "scanin"
+     - [  15] (hp :=    25) "noa2a2a23_x1_sig"
+     - [  14] (hp :=    31) "noa22_x1_3_sig"
+     - [  13] (hp :=    32) "noa22_x1_2_sig"
+     - [  12] (hp :=    42) "seq_detector_cs 0"
+     - [  11] (hp :=    48) "termin"
+     - [  10] (hp :=    51) "input"
+     - [   9] (hp :=    54) "seq_detector_cs 5"
+     - [   8] (hp :=    55) "reset"
+     - [   7] (hp :=    60) "seq_detector_cs 3"
+     - [   6] (hp :=    62) "not_reset"
+     - [   5] (hp :=    70) "not_input"
+     - [   4] (hp :=    74) "seq_detector_cs 2"
+     - [   3] (hp :=    76) "test"
+     - [   2] (hp :=    88) "seq_detector_cs 4"
+     - [   1] (hp :=    90) "clk"
+     - [   0] (hp :=    91) "seq_detector_cs 1"
+
+  o  Routing stats :
+     - routing iterations    := 25814
+     - re-routing iterations := 0
+     - ratio                 := 0%.
+
+  o  Dumping routing grid.
+  o  Saving MBK figure "seqdet_o_b_l_scan".
+  o  Saving layout as "seqdet_o_b_l_scan"...
+
+

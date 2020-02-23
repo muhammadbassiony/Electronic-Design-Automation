@@ -1,0 +1,74 @@
+N:a2_x2_sig:-1:2042 ps
+N:a3_x2_sig:-1:2134 ps
+N:ao22_x2_sig:-1:1665 ps
+N:ao2o22_x2_sig:-1:1718 ps
+N:clk:-1:0 ps
+N:input:-1:0 ps
+N:mbk_buf_not_seq_detector_ns_s5:-1:2119 ps
+N:no2_x1_2_sig:-1:1383 ps
+N:no2_x1_3_sig:-1:1149 ps
+N:no2_x1_sig:-1:1169 ps
+N:noa22_x1_2_sig:-1:2396 ps
+N:noa22_x1_3_sig:-1:2398 ps
+N:noa22_x1_sig:-1:2319 ps
+N:not_input:-1:221 ps
+N:not_seq_detector_cs 0:-1:698 ps
+N:not_seq_detector_cs 1:-1:0 ps
+N:not_seq_detector_cs 2:-1:663 ps
+N:not_seq_detector_cs_s0:-1:930 ps
+N:not_seq_detector_cs_s1:-1:1165 ps
+N:not_seq_detector_cs_s2:-1:769 ps
+N:not_seq_detector_cs_s3:-1:1139 ps
+N:not_seq_detector_cs_s5:-1:951 ps
+N:not_seq_detector_cs_t:-1:1087 ps
+N:not_seq_detector_ns_s1:-1:1699 ps
+N:not_seq_detector_ns_s2:-1:1494 ps
+N:not_seq_detector_ns_s5:-1:1696 ps
+N:o3_x2_sig:-1:1597 ps
+N:output:-1:1597 ps
+N:reset:-1:0 ps
+N:seq_detector_cs 0:-1:543 ps
+N:seq_detector_cs 1:-1:535 ps
+N:seq_detector_cs 2:-1:538 ps
+N:termin:-1:2031 ps
+B:mbk_buf_not_seq_detector_ns_s5:-1:2119 ps
+B:output_ins:-1:1597 ps
+B:termin_ins:-1:2031 ps
+B:o3_x2_ins:-1:1597 ps
+B:seq_detector_cs_2_ins:-1:538 ps
+B:noa22_x1_3_ins:32:2398 ps
+B:ao2o22_x2_ins:-1:1718 ps
+B:a3_x2_ins:32:2134 ps
+B:seq_detector_cs_1_ins:-1:535 ps
+B:noa22_x1_2_ins:-1:2396 ps
+B:seq_detector_cs_0_ins:-1:543 ps
+B:noa22_x1_ins:-1:2319 ps
+B:ao22_x2_ins:-1:1665 ps
+B:a2_x2_ins:-1:2042 ps
+B:not_input_ins:-1:221 ps
+B:not_seq_detector_cs_2_ins:-1:663 ps
+B:not_seq_detector_cs_0_ins:32:698 ps
+B:not_seq_detector_cs_s0_ins:-1:930 ps
+B:not_seq_detector_cs_s1_ins:32:1165 ps
+B:not_seq_detector_cs_s5_ins:-1:951 ps
+B:not_seq_detector_ns_s1_ins:32:1699 ps
+B:no2_x1_3_ins:-1:1149 ps
+B:no2_x1_2_ins:32:1383 ps
+B:no2_x1_ins:-1:1169 ps
+B:not_seq_detector_cs_s2_ins:-1:769 ps
+B:not_seq_detector_ns_s2_ins:-1:1494 ps
+B:not_seq_detector_cs_s3_ins:-1:1139 ps
+B:not_seq_detector_cs_t_ins:-1:1087 ps
+B:not_seq_detector_ns_s5_ins:-1:1696 ps
+C:termin:-1:2031 ps
+C:output:-1:1597 ps
+C:reset:-1:0 ps
+C:clk:-1:0 ps
+C:input:-1:0 ps
+P:seq_detector_cs 0:seq_detector_cs 0:not_seq_detector_cs_0_ins:32:1696 ps
+P:not_seq_detector_cs_0_ins:not_seq_detector_cs 0:not_seq_detector_cs_s1_ins:32:1696 ps
+P:not_seq_detector_cs_s1_ins:not_seq_detector_cs_s1:no2_x1_2_ins:32:1696 ps
+P:no2_x1_2_ins:no2_x1_2_sig:not_seq_detector_ns_s1_ins:32:1696 ps
+P:not_seq_detector_ns_s1_ins:not_seq_detector_ns_s1:a3_x2_ins:32:1696 ps
+P:a3_x2_ins:a3_x2_sig:noa22_x1_3_ins:32:1696 ps
+P:noa22_x1_3_ins:noa22_x1_3_sig:seq_detector_cs_2_ins:32:1696 ps

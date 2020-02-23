@@ -1,0 +1,67 @@
+N:a2_x2_sig:-1:585 ps
+N:an12_x1_sig:-1:1251 ps
+N:clk:-1:0 ps
+N:input:-1:0 ps
+N:inv_x2_sig:-1:661 ps
+N:na2_x1_2_sig:-1:743 ps
+N:na2_x1_3_sig:-1:737 ps
+N:na2_x1_4_sig:-1:739 ps
+N:na2_x1_5_sig:-1:748 ps
+N:na2_x1_6_sig:-1:737 ps
+N:na2_x1_7_sig:-1:738 ps
+N:na2_x1_8_sig:-1:393 ps
+N:na2_x1_sig:-1:743 ps
+N:no2_x1_sig:-1:236 ps
+N:noa22_x1_2_sig:-1:1020 ps
+N:noa22_x1_3_sig:-1:1016 ps
+N:noa22_x1_4_sig:-1:1013 ps
+N:noa22_x1_sig:-1:1007 ps
+N:noa2a2a23_x1_sig:-1:1040 ps
+N:not_input:-1:245 ps
+N:not_reset:-1:194 ps
+N:one_sig:-1:0 ps
+N:output:-1:1080 ps
+N:reset:-1:0 ps
+N:seq_detector_cs 0:-1:516 ps
+N:seq_detector_cs 1:-1:530 ps
+N:seq_detector_cs 2:-1:525 ps
+N:seq_detector_cs 3:-1:518 ps
+N:seq_detector_cs 4:-1:521 ps
+N:seq_detector_cs 5:-1:520 ps
+N:termin:-1:1211 ps
+B:one_sig_ins:-1:-1 ps
+B:output_ins:-1:1080 ps
+B:a2_x2_ins:-1:585 ps
+B:termin_ins:-1:1211 ps
+B:no2_x1_ins:-1:236 ps
+B:seq_detector_cs_5_ins:-1:520 ps
+B:na2_x1_8_ins:-1:393 ps
+B:seq_detector_cs_4_ins:-1:521 ps
+B:an12_x1_ins:32:1251 ps
+B:noa2a2a23_x1_ins:32:1040 ps
+B:seq_detector_cs_3_ins:-1:518 ps
+B:noa22_x1_4_ins:-1:1013 ps
+B:na2_x1_7_ins:-1:738 ps
+B:na2_x1_6_ins:-1:737 ps
+B:seq_detector_cs_2_ins:-1:525 ps
+B:noa22_x1_3_ins:-1:1016 ps
+B:na2_x1_5_ins:-1:748 ps
+B:na2_x1_4_ins:-1:739 ps
+B:seq_detector_cs_1_ins:-1:530 ps
+B:noa22_x1_2_ins:-1:1020 ps
+B:na2_x1_3_ins:-1:737 ps
+B:na2_x1_2_ins:-1:743 ps
+B:seq_detector_cs_0_ins:-1:516 ps
+B:noa22_x1_ins:-1:1007 ps
+B:na2_x1_ins:-1:743 ps
+B:inv_x2_ins:-1:661 ps
+B:not_reset_ins:-1:194 ps
+B:not_input_ins:-1:245 ps
+C:termin:-1:1211 ps
+C:output:-1:1080 ps
+C:reset:-1:0 ps
+C:clk:-1:0 ps
+C:input:-1:0 ps
+P:seq_detector_cs 1:seq_detector_cs 1:noa2a2a23_x1_ins:32:245 ps
+P:noa2a2a23_x1_ins:noa2a2a23_x1_sig:an12_x1_ins:32:245 ps
+P:an12_x1_ins:an12_x1_sig:seq_detector_cs_4_ins:32:245 ps

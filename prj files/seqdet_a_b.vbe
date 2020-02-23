@@ -1,0 +1,54 @@
+-- VHDL data flow description generated from `seqdet_a_b`
+--		date : Fri Dec 13 11:46:39 2019
+
+
+-- Entity Declaration
+
+ENTITY seqdet_a_b IS
+  PORT (
+  input : in BIT;	-- input
+  vdd : in BIT;	-- vdd
+  vss : in BIT;	-- vss
+  clk : in BIT;	-- clk
+  reset : in BIT;	-- reset
+  output : out BIT;	-- output
+  termin : out BIT	-- termin
+  );
+END seqdet_a_b;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF seqdet_a_b IS
+  SIGNAL seq_detector_cs : REG_VECTOR(2 DOWNTO 0) REGISTER;	-- seq_detector_cs
+  SIGNAL aux0 : BIT;		-- aux0
+  SIGNAL aux1 : BIT;		-- aux1
+  SIGNAL aux2 : BIT;		-- aux2
+  SIGNAL aux3 : BIT;		-- aux3
+
+BEGIN
+  aux3 <= NOT(NOT(seq_detector_cs(0)) AND NOT(
+seq_detector_cs(1)));
+  aux2 <= (NOT(seq_detector_cs(2)) AND seq_detector_cs(0));
+  aux1 <= (seq_detector_cs(2) AND seq_detector_cs(1));
+  aux0 <= (NOT(reset) AND NOT(input));
+  label0 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    seq_detector_cs (0) <= GUARDED ((aux0 AND (NOT(seq_detector_cs(2)) OR 
+seq_detector_cs(0)) AND seq_detector_cs(1)) OR (aux0 AND NOT(aux2) 
+AND NOT(seq_detector_cs(1))));
+  END BLOCK label0;
+  label1 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    seq_detector_cs (1) <= GUARDED (aux1 OR reset OR (NOT(input) AND aux2));
+  END BLOCK label1;
+  label2 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    seq_detector_cs (2) <= GUARDED (aux3 AND NOT(reset) AND (NOT(input) OR 
+seq_detector_cs(2) OR seq_detector_cs(0)));
+  END BLOCK label2;
+
+termin <= ((NOT(reset) AND aux1) OR (aux0 AND aux2));
+
+output <= (aux0 AND seq_detector_cs(2) AND NOT(aux3));
+END;
